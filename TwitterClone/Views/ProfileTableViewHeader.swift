@@ -9,6 +9,44 @@ import UIKit
 
 class ProfileTableViewHeader: UIView {
     
+    private enum sectionTabs: String {
+        case tweets = "Tweets"
+        case tweetsAndReplies = "Tweets & Replies"
+        case media = "Media"
+        case likes = "Likes"
+        
+        var index: Int {
+        switch self {
+        case .tweets:
+            return 0
+        case .tweetsAndReplies:
+            return 1
+        case .media:
+            return 2
+        case .likes:
+            return 3
+        }
+    }
+}
+    private var tabs: [UIButton] = ["Tweets","Tweets & Replies","Media", "Likes"].map { buttonTitle in
+        let button = UIButton(type: .system)
+        button.setTitle(buttonTitle, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .bold)
+        button.tintColor = .label
+        button.translatesAutoresizingMaskIntoConstraints = false
+        return button
+    }
+    
+    private lazy var sectionStackView: UIStackView = {
+        let stackView = UIStackView(arrangedSubviews: tabs)
+        stackView.translatesAutoresizingMaskIntoConstraints = false
+        stackView.distribution = .equalSpacing
+        stackView.axis = .horizontal
+        stackView.alignment = .center
+        return stackView
+    }()
+    
+    
     private let followersTextLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -111,7 +149,7 @@ class ProfileTableViewHeader: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        backgroundColor = .red
+        backgroundColor = .systemBackground
         addSubview(profileHeaderImageView)
         addSubview(profileAvatarImageView)
         addSubview(displayNameLabel)
@@ -123,7 +161,20 @@ class ProfileTableViewHeader: UIView {
         addSubview(followingTextLabel)
         addSubview(followersCountLabel)
         addSubview(followersTextLabel)
+        addSubview(sectionStackView)
         configureConstraints()
+        configureStackButton()
+    }
+    
+    private func configureStackButton() {
+        for (_, button) in sectionStackView.arrangedSubviews.enumerated() {
+            guard let button = button as? UIButton else {return }
+            button.addTarget(self, action: #selector(didTapTab(_:)), for: .touchUpInside)
+        }
+    }
+    
+    @objc private func didTapTab(_ sender: UIButton) {
+        print(sender.titleLabel?.text ?? "")
     }
     
     private func configureConstraints() {
@@ -191,6 +242,13 @@ class ProfileTableViewHeader: UIView {
             
         ]
         
+        let sectionStackViewConstraints = [
+            sectionStackView.leadingAnchor.constraint(equalTo: leadingAnchor, constant: 25),
+            sectionStackView.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -25),
+            sectionStackView.topAnchor.constraint(equalTo: followingCountLabel.bottomAnchor, constant: 5),
+            sectionStackView.heightAnchor.constraint(equalToConstant: 35)
+        ]
+        
         NSLayoutConstraint.activate(profileHeaderImageViewConstraints)
         NSLayoutConstraint.activate(profileAvatarImageViewConstraints)
         NSLayoutConstraint.activate(displayNameLabelConstraints)
@@ -202,6 +260,8 @@ class ProfileTableViewHeader: UIView {
         NSLayoutConstraint.activate(followingTextLabelConstraints)
         NSLayoutConstraint.activate(followersCountLabelConstraints)
         NSLayoutConstraint.activate(followersTextLabelConstraints)
+        NSLayoutConstraint.activate(sectionStackViewConstraints)
+
 
 
 
