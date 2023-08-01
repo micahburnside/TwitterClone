@@ -24,7 +24,6 @@
 		54EAF9FA2A789EF0009B8EA8 /* TweetTableViewCellDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAF9F92A789EF0009B8EA8 /* TweetTableViewCellDelegate.swift */; };
 		54EAF9FD2A78A50C009B8EA8 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAF9FC2A78A50C009B8EA8 /* ProfileViewController.swift */; };
 		54EAF9FF2A792F77009B8EA8 /* ProfileTableViewHeader.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAF9FE2A792F77009B8EA8 /* ProfileTableViewHeader.swift */; };
-		54EAFA012A795D75009B8EA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54EAFA002A795D75009B8EA8 /* GoogleService-Info.plist */; };
 		54EAFA042A795E77009B8EA8 /* FirebaseAuth in Frameworks */ = {isa = PBXBuildFile; productRef = 54EAFA032A795E77009B8EA8 /* FirebaseAuth */; };
 		54EAFA062A795E77009B8EA8 /* FirebaseAuthCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 54EAFA052A795E77009B8EA8 /* FirebaseAuthCombine-Community */; };
 		54EAFA082A795E77009B8EA8 /* FirebaseDatabase in Frameworks */ = {isa = PBXBuildFile; productRef = 54EAFA072A795E77009B8EA8 /* FirebaseDatabase */; };
@@ -34,6 +33,10 @@
 		54EAFA102A795E77009B8EA8 /* FirebaseFirestoreSwift in Frameworks */ = {isa = PBXBuildFile; productRef = 54EAFA0F2A795E77009B8EA8 /* FirebaseFirestoreSwift */; };
 		54EAFA122A795E77009B8EA8 /* FirebaseStorage in Frameworks */ = {isa = PBXBuildFile; productRef = 54EAFA112A795E77009B8EA8 /* FirebaseStorage */; };
 		54EAFA142A795E77009B8EA8 /* FirebaseStorageCombine-Community in Frameworks */ = {isa = PBXBuildFile; productRef = 54EAFA132A795E77009B8EA8 /* FirebaseStorageCombine-Community */; };
+		54EAFA172A796019009B8EA8 /* OnboardingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA162A796019009B8EA8 /* OnboardingViewController.swift */; };
+		54EAFA192A7960E3009B8EA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54EAFA182A7960E3009B8EA8 /* GoogleService-Info.plist */; };
+		54EAFA1A2A7960E3009B8EA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54EAFA182A7960E3009B8EA8 /* GoogleService-Info.plist */; };
+		54EAFA1B2A7960E3009B8EA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54EAFA182A7960E3009B8EA8 /* GoogleService-Info.plist */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -75,7 +78,8 @@
 		54EAF9F92A789EF0009B8EA8 /* TweetTableViewCellDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetTableViewCellDelegate.swift; sourceTree = "<group>"; };
 		54EAF9FC2A78A50C009B8EA8 /* ProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		54EAF9FE2A792F77009B8EA8 /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
-		54EAFA002A795D75009B8EA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		54EAFA162A796019009B8EA8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
+		54EAFA182A7960E3009B8EA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +147,7 @@
 				54EAF9C42A783069009B8EA8 /* Assets.xcassets */,
 				54EAF9C62A783069009B8EA8 /* LaunchScreen.storyboard */,
 				54EAF9C92A783069009B8EA8 /* Info.plist */,
+				54EAFA182A7960E3009B8EA8 /* GoogleService-Info.plist */,
 				54EAF9C12A783068009B8EA8 /* TwitterClone.xcdatamodeld */,
 			);
 			path = TwitterClone;
@@ -161,7 +166,6 @@
 			children = (
 				54EAF9DC2A783069009B8EA8 /* TwitterCloneUITests.swift */,
 				54EAF9DE2A783069009B8EA8 /* TwitterCloneUITestsLaunchTests.swift */,
-				54EAFA002A795D75009B8EA8 /* GoogleService-Info.plist */,
 			);
 			path = TwitterCloneUITests;
 			sourceTree = "<group>";
@@ -169,6 +173,7 @@
 		54EAF9EB2A784CA8009B8EA8 /* Controllers */ = {
 			isa = PBXGroup;
 			children = (
+				54EAFA152A795FF7009B8EA8 /* Onboarding */,
 				54EAF9FB2A78A4F3009B8EA8 /* General */,
 				54EAF9EC2A784CB1009B8EA8 /* Core */,
 			);
@@ -210,6 +215,14 @@
 				54EAF9FC2A78A50C009B8EA8 /* ProfileViewController.swift */,
 			);
 			path = General;
+			sourceTree = "<group>";
+		};
+		54EAFA152A795FF7009B8EA8 /* Onboarding */ = {
+			isa = PBXGroup;
+			children = (
+				54EAFA162A796019009B8EA8 /* OnboardingViewController.swift */,
+			);
+			path = Onboarding;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -332,6 +345,7 @@
 			files = (
 				54EAF9C82A783069009B8EA8 /* LaunchScreen.storyboard in Resources */,
 				54EAF9C52A783069009B8EA8 /* Assets.xcassets in Resources */,
+				54EAFA192A7960E3009B8EA8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -339,6 +353,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54EAFA1A2A7960E3009B8EA8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -346,7 +361,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				54EAFA012A795D75009B8EA8 /* GoogleService-Info.plist in Resources */,
+				54EAFA1B2A7960E3009B8EA8 /* GoogleService-Info.plist in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -357,6 +372,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54EAFA172A796019009B8EA8 /* OnboardingViewController.swift in Sources */,
 				54EAF9FA2A789EF0009B8EA8 /* TweetTableViewCellDelegate.swift in Sources */,
 				54EAF9F02A784CE2009B8EA8 /* SearchViewController.swift in Sources */,
 				54EAF9EE2A784CCB009B8EA8 /* HomeViewController.swift in Sources */,
