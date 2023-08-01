@@ -28,6 +28,7 @@ class ProfileTableViewHeader: UIView {
         }
     }
 }
+    
     private var leadingAnchors: [NSLayoutConstraint] = []
     private var trailingAnchors: [NSLayoutConstraint] = []
     

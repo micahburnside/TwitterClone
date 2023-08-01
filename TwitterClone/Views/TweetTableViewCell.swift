@@ -29,7 +29,7 @@ class TweetTableViewCell: UITableViewCell {
     
     private let displayNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Rusty Shackelford"
+        label.text = "Rusty Shackleford"
         label.font = .systemFont(ofSize: 16, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -38,6 +38,7 @@ class TweetTableViewCell: UITableViewCell {
     private let usernameLabel: UILabel = {
         let label = UILabel()
         label.text = "@RustyShackleford"
+        label.lineBreakMode = .byTruncatingTail
         label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 16, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false

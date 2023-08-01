@@ -66,17 +66,22 @@ class RegisterViewController: UIViewController {
         viewModel.validateRegistrationForm()
     }
     private func bindViews() {
+        
         emailTextField.addTarget(self, action: #selector(didChangeEmailField), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(didChangePasswordField), for: .editingChanged)
         viewModel.$isRegistrationFormValid.sink { [weak self] validationState in
             self?.registerButton.isEnabled = validationState
+            
         }
+        
         .store(in: &subscriptoins)
         
         viewModel.$user.sink { [weak self] user in
             print(user)
         }
+        
         .store(in: &subscriptoins)
+        
     }
     
     @objc private func didTapToDismiss() {
@@ -136,8 +141,6 @@ class RegisterViewController: UIViewController {
         NSLayoutConstraint.activate(emailTextFieldConstraints)
         NSLayoutConstraint.activate(passwordTextFieldConstraints)
         NSLayoutConstraint.activate(registerButtonConstraints)
-
-
         
     }
 

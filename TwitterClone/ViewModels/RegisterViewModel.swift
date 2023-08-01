@@ -11,7 +11,6 @@ import Combine
 
 final class RegisterViewViewModel: ObservableObject {
     
-    
     @Published var email: String?
     @Published var password: String?
     @Published var isRegistrationFormValid: Bool = false
@@ -45,6 +44,7 @@ final class RegisterViewViewModel: ObservableObject {
             } receiveValue: { [weak self] user in
                 self?.user = user
             }
+        
             .store(in: &subscriptions)
     }
 }
