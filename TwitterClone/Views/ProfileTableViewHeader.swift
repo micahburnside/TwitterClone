@@ -328,15 +328,7 @@ class ProfileTableViewHeader: UIView {
         NSLayoutConstraint.activate(followersTextLabelConstraints)
         NSLayoutConstraint.activate(sectionStackViewConstraints)
         NSLayoutConstraint.activate(indicatorConstraints)
-
-
-
-
-
         
-
-
-
     }
     
     required init?(coder: NSCoder) {
