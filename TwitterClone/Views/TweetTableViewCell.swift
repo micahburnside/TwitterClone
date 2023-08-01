@@ -30,7 +30,7 @@ class TweetTableViewCell: UITableViewCell {
     private let displayNameLabel: UILabel = {
         let label = UILabel()
         label.text = "Rusty Shackelford"
-        label.font = .systemFont(ofSize: 18, weight: .bold)
+        label.font = .systemFont(ofSize: 16, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
     }()
@@ -119,6 +119,7 @@ class TweetTableViewCell: UITableViewCell {
     
     @objc private func didTapLike() {
         delegate?.tweetTableCellDidTapLike()
+        likeButton.tintColor = .red
     }
     
     @objc private func didTapShare() {
@@ -130,8 +131,6 @@ class TweetTableViewCell: UITableViewCell {
         retweetButton.addTarget(self, action: #selector(didTapRetweet), for: .touchUpInside)
         likeButton.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
         shareButton.addTarget(self, action: #selector(didTapShare), for: .touchUpInside)
-
-
 
     }
     
@@ -146,12 +145,14 @@ class TweetTableViewCell: UITableViewCell {
         let displayNameLabelConstraints = [
             displayNameLabel.leadingAnchor.constraint(equalTo: avatarImageView.trailingAnchor, constant: 20),
             displayNameLabel.topAnchor.constraint(equalTo: contentView.topAnchor, constant: 20),
+            displayNameLabel.trailingAnchor.constraint(equalTo: usernameLabel.leadingAnchor, constant: 6),
+
         ]
         
         let usernameLabelConstraints = [
             usernameLabel.leadingAnchor.constraint(equalTo: displayNameLabel.trailingAnchor, constant: 10),
             usernameLabel.centerYAnchor.constraint(equalTo: displayNameLabel.centerYAnchor),
-//            usernameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor, constant: -15)
+            usernameLabel.trailingAnchor.constraint(equalTo: contentView.trailingAnchor)
         ]
         
         let tweetContextLabelConstraints = [

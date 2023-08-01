@@ -8,23 +8,51 @@
 import UIKit
 
 class ProfileViewController: UIViewController {
-
+    
+    private let profileTableView: UITableView = {
+        let tableView = UITableView()
+        tableView.register(TweetTableViewCell.self, forCellReuseIdentifier: TweetTableViewCell.identifier)
+        tableView.translatesAutoresizingMaskIntoConstraints = false
+        return tableView
+    }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
         navigationItem.title = "Profile"
-        // Do any additional setup after loading the view.
+        view.addSubview(profileTableView)
+        let headerView = ProfileHeader(frame: CGRect(x: 0, y: 0, width: profileTableView.frame.width, height: 380))
+        profileTableView.delegate = self
+        profileTableView.dataSource = self
+        profileTableView.tableHeaderView = headerView
+        configureConstraints()
     }
     
 
-    /*
-    // MARK: - Navigation
+    private func configureConstraints() {
+        let profileTableViewConstraints = [
+            profileTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),
+            profileTableView.trailingAnchor.constraint(equalTo: view.trailingAnchor),
+            profileTableView.topAnchor.constraint(equalTo: view.topAnchor),
+            profileTableView.bottomAnchor.constraint(equalTo: view.bottomAnchor)
 
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+        ]
+        
+        NSLayoutConstraint.activate(profileTableViewConstraints)
     }
-    */
 
+}
+extension ProfileViewController: UITableViewDelegate, UITableViewDataSource {
+    func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+        4
+    }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: TweetTableViewCell.identifier, for: indexPath) as? TweetTableViewCell else {
+            return UITableViewCell()
+        }
+        return cell
+    }
+    
+    
 }
