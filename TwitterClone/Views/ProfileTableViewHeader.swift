@@ -8,12 +8,23 @@
 import UIKit
 
 class ProfileTableViewHeader: UIView {
+    
+    
+    private let usernameLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.text = "@RustyShackleford"
+        label.textColor = .secondaryLabel
+        label.font = .systemFont(ofSize: 18, weight: .regular)
+        return label
+    }()
 
     private let displayNameLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.text = "Rusty"
         label.font = .systemFont(ofSize: 22, weight: .bold)
+        label.textColor = .label
         return label
     }()
     
@@ -43,10 +54,12 @@ class ProfileTableViewHeader: UIView {
         addSubview(profileHeaderImageView)
         addSubview(profileAvatarImageView)
         addSubview(displayNameLabel)
+        addSubview(usernameLabel)
 
 
         configureConstraints()
     }
+    
     private func configureConstraints() {
             let profileHeaderImageViewConstraints = [
                 profileHeaderImageView.leadingAnchor.constraint(equalTo: leadingAnchor),
@@ -66,9 +79,17 @@ class ProfileTableViewHeader: UIView {
             displayNameLabel.leadingAnchor.constraint(equalTo: profileAvatarImageView.leadingAnchor),
             displayNameLabel.topAnchor.constraint(equalTo: profileAvatarImageView.bottomAnchor, constant: 20)
         ]
+        
+        let usernameLabelConstraints = [
+            usernameLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
+            usernameLabel.topAnchor.constraint(equalTo: displayNameLabel.bottomAnchor, constant: 5)
+        ]
+        
         NSLayoutConstraint.activate(profileHeaderImageViewConstraints)
         NSLayoutConstraint.activate(profileAvatarImageViewConstraints)
         NSLayoutConstraint.activate(displayNameLabelConstraints)
+        NSLayoutConstraint.activate(usernameLabelConstraints)
+
 
 
     }
