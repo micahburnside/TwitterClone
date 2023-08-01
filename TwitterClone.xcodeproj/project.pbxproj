@@ -37,6 +37,9 @@
 		54EAFA192A7960E3009B8EA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54EAFA182A7960E3009B8EA8 /* GoogleService-Info.plist */; };
 		54EAFA1A2A7960E3009B8EA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54EAFA182A7960E3009B8EA8 /* GoogleService-Info.plist */; };
 		54EAFA1B2A7960E3009B8EA8 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 54EAFA182A7960E3009B8EA8 /* GoogleService-Info.plist */; };
+		54EAFA1D2A796852009B8EA8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA1C2A796852009B8EA8 /* RegisterViewController.swift */; };
+		54EAFA1E2A796852009B8EA8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA1C2A796852009B8EA8 /* RegisterViewController.swift */; };
+		54EAFA1F2A796852009B8EA8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA1C2A796852009B8EA8 /* RegisterViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,7 @@
 		54EAF9FE2A792F77009B8EA8 /* ProfileTableViewHeader.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileTableViewHeader.swift; sourceTree = "<group>"; };
 		54EAFA162A796019009B8EA8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		54EAFA182A7960E3009B8EA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		54EAFA1C2A796852009B8EA8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -221,6 +225,7 @@
 			isa = PBXGroup;
 			children = (
 				54EAFA162A796019009B8EA8 /* OnboardingViewController.swift */,
+				54EAFA1C2A796852009B8EA8 /* RegisterViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -381,6 +386,7 @@
 				54EAF9F42A784CF5009B8EA8 /* DirectMessagesViewController.swift in Sources */,
 				54EAF9FD2A78A50C009B8EA8 /* ProfileViewController.swift in Sources */,
 				54EAF9C32A783068009B8EA8 /* TwitterClone.xcdatamodeld in Sources */,
+				54EAFA1D2A796852009B8EA8 /* RegisterViewController.swift in Sources */,
 				54EAF9FF2A792F77009B8EA8 /* ProfileTableViewHeader.swift in Sources */,
 				54EAF9B92A783068009B8EA8 /* AppDelegate.swift in Sources */,
 				54EAF9F22A784CED009B8EA8 /* NotificationsViewController.swift in Sources */,
@@ -393,6 +399,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54EAF9D32A783069009B8EA8 /* TwitterCloneTests.swift in Sources */,
+				54EAFA1E2A796852009B8EA8 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -400,6 +407,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54EAFA1F2A796852009B8EA8 /* RegisterViewController.swift in Sources */,
 				54EAF9DF2A783069009B8EA8 /* TwitterCloneUITestsLaunchTests.swift in Sources */,
 				54EAF9DD2A783069009B8EA8 /* TwitterCloneUITests.swift in Sources */,
 			);
