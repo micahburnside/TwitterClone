@@ -9,6 +9,15 @@ import UIKit
 
 class ProfileTableViewHeader: UIView {
     
+    private let joinedDateLabel: UILabel = {
+        let label = UILabel()
+        label.translatesAutoresizingMaskIntoConstraints = false
+        label.textColor = .secondaryLabel
+        label.font = .systemFont(ofSize: 14, weight: .regular)
+        label.text = "Joined May 2021"
+        return label
+    }()
+    
     private let joinDateImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "calendar", withConfiguration: UIImage.SymbolConfiguration(pointSize: 14))
@@ -73,7 +82,7 @@ class ProfileTableViewHeader: UIView {
         addSubview(usernameLabel)
         addSubview(userBioLabel)
         addSubview(joinDateImageView)
-
+        addSubview(joinedDateLabel)
         configureConstraints()
     }
     
@@ -110,10 +119,12 @@ class ProfileTableViewHeader: UIView {
         
         let joinDateImageViewConstraints = [
             joinDateImageView.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
-
             joinDateImageView.topAnchor.constraint(equalTo: userBioLabel.bottomAnchor, constant: 5),
-//            joinDateImageView.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 5)
-
+        ]
+        
+        let joinedDateLabelConstraints = [
+            joinedDateLabel.leadingAnchor.constraint(equalTo: joinDateImageView.trailingAnchor, constant: 2),
+            joinedDateLabel.bottomAnchor.constraint(equalTo: joinDateImageView.bottomAnchor)
         ]
         
         NSLayoutConstraint.activate(profileHeaderImageViewConstraints)
@@ -122,9 +133,10 @@ class ProfileTableViewHeader: UIView {
         NSLayoutConstraint.activate(usernameLabelConstraints)
         NSLayoutConstraint.activate(userBioLabelConstraints)
         NSLayoutConstraint.activate(joinDateImageViewConstraints)
+        NSLayoutConstraint.activate(joinedDateLabelConstraints)
 
 
-        
+
     }
     
     required init?(coder: NSCoder) {
