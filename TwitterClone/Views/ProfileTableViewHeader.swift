@@ -9,6 +9,14 @@ import UIKit
 
 class ProfileTableViewHeader: UIView {
     
+    private let joinDateImageView: UIImageView = {
+        let imageView = UIImageView()
+        imageView.image = UIImage(systemName: "calendar", withConfiguration: UIImage.SymbolConfiguration(pointSize: 14))
+        imageView.translatesAutoresizingMaskIntoConstraints = false
+        imageView.tintColor = .secondaryLabel
+        return imageView
+    }()
+    
     private let userBioLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -64,6 +72,7 @@ class ProfileTableViewHeader: UIView {
         addSubview(displayNameLabel)
         addSubview(usernameLabel)
         addSubview(userBioLabel)
+        addSubview(joinDateImageView)
 
         configureConstraints()
     }
@@ -97,6 +106,13 @@ class ProfileTableViewHeader: UIView {
             userBioLabel.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
             userBioLabel.trailingAnchor.constraint(equalTo: trailingAnchor, constant: -5),
             userBioLabel.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 5)
+        ]
+        
+        let joinDateImageViewConstraints = [
+            joinDateImageView.leadingAnchor.constraint(equalTo: displayNameLabel.leadingAnchor),
+
+            joinDateImageView.topAnchor.constraint(equalTo: userBioLabel.bottomAnchor, constant: 5),
+//            joinDateImageView.topAnchor.constraint(equalTo: usernameLabel.bottomAnchor, constant: 5)
 
         ]
         
@@ -105,6 +121,8 @@ class ProfileTableViewHeader: UIView {
         NSLayoutConstraint.activate(displayNameLabelConstraints)
         NSLayoutConstraint.activate(usernameLabelConstraints)
         NSLayoutConstraint.activate(userBioLabelConstraints)
+        NSLayoutConstraint.activate(joinDateImageViewConstraints)
+
 
         
     }
