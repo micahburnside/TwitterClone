@@ -40,6 +40,12 @@
 		54EAFA1D2A796852009B8EA8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA1C2A796852009B8EA8 /* RegisterViewController.swift */; };
 		54EAFA1E2A796852009B8EA8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA1C2A796852009B8EA8 /* RegisterViewController.swift */; };
 		54EAFA1F2A796852009B8EA8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA1C2A796852009B8EA8 /* RegisterViewController.swift */; };
+		54EAFA222A7972FB009B8EA8 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA212A7972FB009B8EA8 /* RegisterViewModel.swift */; };
+		54EAFA232A7972FB009B8EA8 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA212A7972FB009B8EA8 /* RegisterViewModel.swift */; };
+		54EAFA242A7972FB009B8EA8 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA212A7972FB009B8EA8 /* RegisterViewModel.swift */; };
+		54EAFA272A7978BD009B8EA8 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA262A7978BD009B8EA8 /* AuthManager.swift */; };
+		54EAFA282A7978BD009B8EA8 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA262A7978BD009B8EA8 /* AuthManager.swift */; };
+		54EAFA292A7978BD009B8EA8 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA262A7978BD009B8EA8 /* AuthManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -84,6 +90,8 @@
 		54EAFA162A796019009B8EA8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		54EAFA182A7960E3009B8EA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54EAFA1C2A796852009B8EA8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		54EAFA212A7972FB009B8EA8 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		54EAFA262A7978BD009B8EA8 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -143,6 +151,8 @@
 		54EAF9B72A783068009B8EA8 /* TwitterClone */ = {
 			isa = PBXGroup;
 			children = (
+				54EAFA252A7978AE009B8EA8 /* Networking */,
+				54EAFA202A7972DB009B8EA8 /* ViewModels */,
 				54EAF9F82A789EDE009B8EA8 /* Protocols */,
 				54EAF9F52A788AE7009B8EA8 /* Views */,
 				54EAF9EB2A784CA8009B8EA8 /* Controllers */,
@@ -228,6 +238,22 @@
 				54EAFA1C2A796852009B8EA8 /* RegisterViewController.swift */,
 			);
 			path = Onboarding;
+			sourceTree = "<group>";
+		};
+		54EAFA202A7972DB009B8EA8 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				54EAFA212A7972FB009B8EA8 /* RegisterViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		54EAFA252A7978AE009B8EA8 /* Networking */ = {
+			isa = PBXGroup;
+			children = (
+				54EAFA262A7978BD009B8EA8 /* AuthManager.swift */,
+			);
+			path = Networking;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -378,6 +404,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54EAFA172A796019009B8EA8 /* OnboardingViewController.swift in Sources */,
+				54EAFA222A7972FB009B8EA8 /* RegisterViewModel.swift in Sources */,
 				54EAF9FA2A789EF0009B8EA8 /* TweetTableViewCellDelegate.swift in Sources */,
 				54EAF9F02A784CE2009B8EA8 /* SearchViewController.swift in Sources */,
 				54EAF9EE2A784CCB009B8EA8 /* HomeViewController.swift in Sources */,
@@ -385,6 +412,7 @@
 				54EAF9BD2A783068009B8EA8 /* MainTabBarViewController.swift in Sources */,
 				54EAF9F42A784CF5009B8EA8 /* DirectMessagesViewController.swift in Sources */,
 				54EAF9FD2A78A50C009B8EA8 /* ProfileViewController.swift in Sources */,
+				54EAFA272A7978BD009B8EA8 /* AuthManager.swift in Sources */,
 				54EAF9C32A783068009B8EA8 /* TwitterClone.xcdatamodeld in Sources */,
 				54EAFA1D2A796852009B8EA8 /* RegisterViewController.swift in Sources */,
 				54EAF9FF2A792F77009B8EA8 /* ProfileTableViewHeader.swift in Sources */,
@@ -399,6 +427,8 @@
 			buildActionMask = 2147483647;
 			files = (
 				54EAF9D32A783069009B8EA8 /* TwitterCloneTests.swift in Sources */,
+				54EAFA282A7978BD009B8EA8 /* AuthManager.swift in Sources */,
+				54EAFA232A7972FB009B8EA8 /* RegisterViewModel.swift in Sources */,
 				54EAFA1E2A796852009B8EA8 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -410,6 +440,8 @@
 				54EAFA1F2A796852009B8EA8 /* RegisterViewController.swift in Sources */,
 				54EAF9DF2A783069009B8EA8 /* TwitterCloneUITestsLaunchTests.swift in Sources */,
 				54EAF9DD2A783069009B8EA8 /* TwitterCloneUITests.swift in Sources */,
+				54EAFA242A7972FB009B8EA8 /* RegisterViewModel.swift in Sources */,
+				54EAFA292A7978BD009B8EA8 /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
