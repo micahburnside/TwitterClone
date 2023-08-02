@@ -69,7 +69,7 @@ class RegisterViewController: UIViewController {
         
         emailTextField.addTarget(self, action: #selector(didChangeEmailField), for: .editingChanged)
         passwordTextField.addTarget(self, action: #selector(didChangePasswordField), for: .editingChanged)
-        viewModel.$isRegistrationFormValid.sink { [weak self] validationState in
+        viewModel.$isAuthenticationFormValid.sink { [weak self] validationState in
             self?.registerButton.isEnabled = validationState
             
         }
