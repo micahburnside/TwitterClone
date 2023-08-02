@@ -11,7 +11,7 @@ import Combine
 class RegisterViewController: UIViewController {
 
     private var viewModel = AuthenticationViewModel()
-    private var subscriptoins: Set<AnyCancellable> = []
+    private var subscriptions: Set<AnyCancellable> = []
     
     private let registerTitleLabel: UILabel = {
         let label = UILabel()
@@ -58,13 +58,14 @@ class RegisterViewController: UIViewController {
     
     @objc private func didChangeEmailField() {
         viewModel.email = emailTextField.text
-        viewModel.validateRegistrationForm()
+        viewModel.validateAuthenticationForm()
     }
     
     @objc private func didChangePasswordField() {
         viewModel.password = passwordTextField.text
-        viewModel.validateRegistrationForm()
+        viewModel.validateAuthenticationForm()
     }
+    
     private func bindViews() {
         
         emailTextField.addTarget(self, action: #selector(didChangeEmailField), for: .editingChanged)
@@ -74,7 +75,7 @@ class RegisterViewController: UIViewController {
             
         }
         
-        .store(in: &subscriptoins)
+        .store(in: &subscriptions)
         
         viewModel.$user.sink { [weak self] user in
             guard user != nil else { return }
@@ -82,7 +83,7 @@ class RegisterViewController: UIViewController {
             vc.dismiss(animated: true)
         }
         
-        .store(in: &subscriptoins)
+        .store(in: &subscriptions)
         
     }
     

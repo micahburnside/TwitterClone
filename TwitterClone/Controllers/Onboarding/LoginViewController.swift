@@ -6,9 +6,14 @@
 //
 
 import UIKit
+import Combine
 
 class LoginViewController: UIViewController {
 
+    private var viewModel = AuthenticationViewModel()
+    
+    private var subscriptions: Set<AnyCancellable> = []
+    
     private let loginTitleLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -53,9 +58,38 @@ class LoginViewController: UIViewController {
     }()
     
     @objc private func didTapLogin() {
-//        viewModel.createUser()
+        viewModel.loginUser()
     }
-
+    
+    @objc private func didChangeEmailField() {
+        viewModel.email = emailTextField.text
+        viewModel.validateAuthenticationForm()
+    }
+    
+    @objc private func didChangePasswordField() {
+        viewModel.password = passwordTextField.text
+        viewModel.validateAuthenticationForm()
+    }
+    private func bindViews() {
+        
+        emailTextField.addTarget(self, action: #selector(didChangeEmailField), for: .editingChanged)
+        passwordTextField.addTarget(self, action: #selector(didChangePasswordField), for: .editingChanged)
+        viewModel.$isAuthenticationFormValid.sink { [weak self] validationState in
+            self?.loginButton.isEnabled = validationState
+            
+        }
+        
+        .store(in: &subscriptions)
+        
+        viewModel.$user.sink { [weak self] user in
+            guard user != nil else { return }
+            guard let vc = self?.navigationController?.viewControllers.first as? OnboardingViewController else { return }
+            vc.dismiss(animated: true)
+        }
+        
+        .store(in: &subscriptions)
+        
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -67,6 +101,7 @@ class LoginViewController: UIViewController {
         view.addSubview(loginButton)
         loginButton.addTarget(self, action: #selector(didTapLogin), for: .touchUpInside)
         configureConstraints()
+        bindViews()
     }
     
     private func configureConstraints() {

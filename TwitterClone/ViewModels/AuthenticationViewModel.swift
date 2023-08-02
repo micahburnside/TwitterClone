@@ -19,7 +19,7 @@ final class AuthenticationViewModel: ObservableObject {
     
     private var subscriptions: Set<AnyCancellable> = []
 
-    func validateRegistrationForm() {
+    func validateAuthenticationForm() {
         guard let email = email,
               let password = password else {
             isAuthenticationFormValid = false
@@ -40,6 +40,20 @@ final class AuthenticationViewModel: ObservableObject {
               let password = password else { return }
         // returns a publisher we can subscribe to
         AuthManager.shared.registeruser(with: email, password: password)
+            .sink { _ in
+                
+            } receiveValue: { [weak self] user in
+                self?.user = user
+            }
+        
+            .store(in: &subscriptions)
+    }
+    
+    func loginUser() {
+        guard let email = email,
+              let password = password else { return }
+        // returns a publisher we can subscribe to
+        AuthManager.shared.loginUser(with: email, password: password)
             .sink { _ in
                 
             } receiveValue: { [weak self] user in
