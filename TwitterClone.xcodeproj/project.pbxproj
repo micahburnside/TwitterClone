@@ -40,12 +40,15 @@
 		54EAFA1D2A796852009B8EA8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA1C2A796852009B8EA8 /* RegisterViewController.swift */; };
 		54EAFA1E2A796852009B8EA8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA1C2A796852009B8EA8 /* RegisterViewController.swift */; };
 		54EAFA1F2A796852009B8EA8 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA1C2A796852009B8EA8 /* RegisterViewController.swift */; };
-		54EAFA222A7972FB009B8EA8 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA212A7972FB009B8EA8 /* RegisterViewModel.swift */; };
-		54EAFA232A7972FB009B8EA8 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA212A7972FB009B8EA8 /* RegisterViewModel.swift */; };
-		54EAFA242A7972FB009B8EA8 /* RegisterViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA212A7972FB009B8EA8 /* RegisterViewModel.swift */; };
+		54EAFA222A7972FB009B8EA8 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA212A7972FB009B8EA8 /* AuthenticationViewModel.swift */; };
+		54EAFA232A7972FB009B8EA8 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA212A7972FB009B8EA8 /* AuthenticationViewModel.swift */; };
+		54EAFA242A7972FB009B8EA8 /* AuthenticationViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA212A7972FB009B8EA8 /* AuthenticationViewModel.swift */; };
 		54EAFA272A7978BD009B8EA8 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA262A7978BD009B8EA8 /* AuthManager.swift */; };
 		54EAFA282A7978BD009B8EA8 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA262A7978BD009B8EA8 /* AuthManager.swift */; };
 		54EAFA292A7978BD009B8EA8 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA262A7978BD009B8EA8 /* AuthManager.swift */; };
+		54EAFA2B2A7A2A5D009B8EA8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA2A2A7A2A5D009B8EA8 /* LoginViewController.swift */; };
+		54EAFA2C2A7A2A5D009B8EA8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA2A2A7A2A5D009B8EA8 /* LoginViewController.swift */; };
+		54EAFA2D2A7A2A5D009B8EA8 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA2A2A7A2A5D009B8EA8 /* LoginViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -90,8 +93,9 @@
 		54EAFA162A796019009B8EA8 /* OnboardingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OnboardingViewController.swift; sourceTree = "<group>"; };
 		54EAFA182A7960E3009B8EA8 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		54EAFA1C2A796852009B8EA8 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
-		54EAFA212A7972FB009B8EA8 /* RegisterViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewModel.swift; sourceTree = "<group>"; };
+		54EAFA212A7972FB009B8EA8 /* AuthenticationViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthenticationViewModel.swift; sourceTree = "<group>"; };
 		54EAFA262A7978BD009B8EA8 /* AuthManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
+		54EAFA2A2A7A2A5D009B8EA8 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -236,6 +240,7 @@
 			children = (
 				54EAFA162A796019009B8EA8 /* OnboardingViewController.swift */,
 				54EAFA1C2A796852009B8EA8 /* RegisterViewController.swift */,
+				54EAFA2A2A7A2A5D009B8EA8 /* LoginViewController.swift */,
 			);
 			path = Onboarding;
 			sourceTree = "<group>";
@@ -243,7 +248,7 @@
 		54EAFA202A7972DB009B8EA8 /* ViewModels */ = {
 			isa = PBXGroup;
 			children = (
-				54EAFA212A7972FB009B8EA8 /* RegisterViewModel.swift */,
+				54EAFA212A7972FB009B8EA8 /* AuthenticationViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -404,7 +409,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				54EAFA172A796019009B8EA8 /* OnboardingViewController.swift in Sources */,
-				54EAFA222A7972FB009B8EA8 /* RegisterViewModel.swift in Sources */,
+				54EAFA222A7972FB009B8EA8 /* AuthenticationViewModel.swift in Sources */,
 				54EAF9FA2A789EF0009B8EA8 /* TweetTableViewCellDelegate.swift in Sources */,
 				54EAF9F02A784CE2009B8EA8 /* SearchViewController.swift in Sources */,
 				54EAF9EE2A784CCB009B8EA8 /* HomeViewController.swift in Sources */,
@@ -416,6 +421,7 @@
 				54EAF9C32A783068009B8EA8 /* TwitterClone.xcdatamodeld in Sources */,
 				54EAFA1D2A796852009B8EA8 /* RegisterViewController.swift in Sources */,
 				54EAF9FF2A792F77009B8EA8 /* ProfileTableViewHeader.swift in Sources */,
+				54EAFA2B2A7A2A5D009B8EA8 /* LoginViewController.swift in Sources */,
 				54EAF9B92A783068009B8EA8 /* AppDelegate.swift in Sources */,
 				54EAF9F22A784CED009B8EA8 /* NotificationsViewController.swift in Sources */,
 				54EAF9BB2A783068009B8EA8 /* SceneDelegate.swift in Sources */,
@@ -428,7 +434,8 @@
 			files = (
 				54EAF9D32A783069009B8EA8 /* TwitterCloneTests.swift in Sources */,
 				54EAFA282A7978BD009B8EA8 /* AuthManager.swift in Sources */,
-				54EAFA232A7972FB009B8EA8 /* RegisterViewModel.swift in Sources */,
+				54EAFA232A7972FB009B8EA8 /* AuthenticationViewModel.swift in Sources */,
+				54EAFA2C2A7A2A5D009B8EA8 /* LoginViewController.swift in Sources */,
 				54EAFA1E2A796852009B8EA8 /* RegisterViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -437,10 +444,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				54EAFA2D2A7A2A5D009B8EA8 /* LoginViewController.swift in Sources */,
 				54EAFA1F2A796852009B8EA8 /* RegisterViewController.swift in Sources */,
 				54EAF9DF2A783069009B8EA8 /* TwitterCloneUITestsLaunchTests.swift in Sources */,
 				54EAF9DD2A783069009B8EA8 /* TwitterCloneUITests.swift in Sources */,
-				54EAFA242A7972FB009B8EA8 /* RegisterViewModel.swift in Sources */,
+				54EAFA242A7972FB009B8EA8 /* AuthenticationViewModel.swift in Sources */,
 				54EAFA292A7978BD009B8EA8 /* AuthManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

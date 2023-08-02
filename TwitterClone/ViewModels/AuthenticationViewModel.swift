@@ -1,5 +1,5 @@
 //
-//  RegisterViewModel.swift
+//  AuthenticationViewModel.swift
 //  TwitterClone
 //
 //  Created by Micah Burnside on 8/1/23.
@@ -9,8 +9,9 @@ import Foundation
 import Firebase
 import Combine
 
-final class RegisterViewViewModel: ObservableObject {
+final class AuthenticationViewModel: ObservableObject {
     
+    //Combine Framework.
     @Published var email: String?
     @Published var password: String?
     @Published var isRegistrationFormValid: Bool = false

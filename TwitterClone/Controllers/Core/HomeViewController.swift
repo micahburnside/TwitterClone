@@ -29,6 +29,7 @@ class HomeViewController: UIViewController {
         let vc = ProfileViewController()
         navigationController?.pushViewController(vc, animated: true)
     }
+    
     private let timelineTableView: UITableView = {
         let tableView = UITableView()
         tableView.register(TweetTableViewCell.self, forCellReuseIdentifier: TweetTableViewCell.identifier)
@@ -41,7 +42,13 @@ class HomeViewController: UIViewController {
         timelineTableView.delegate = self
         timelineTableView.dataSource = self
         configureNavigationbar()
+        navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "rectangle.portrait.and.arrow.right"), style: .plain, target: self, action: #selector(didTapSignOut))
         
+    }
+    
+    @objc private func didTapSignOut() {
+      try?  Auth.auth().signOut()
+        handleAuthentication()
     }
 
     override func viewDidLayoutSubviews() {
