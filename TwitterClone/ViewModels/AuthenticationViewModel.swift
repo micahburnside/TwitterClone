@@ -42,6 +42,9 @@ final class AuthenticationViewModel: ObservableObject {
               let password = password else { return }
         // returns a publisher we can subscribe to
         AuthManager.shared.registeruser(with: email, password: password)
+            .handleEvents(receiveOutput: { [weak self] user in
+                self?.createRecord(for: user)
+            })
             .sink { [weak self] completion in
                 
                 if case .failure(let error) = completion {
@@ -52,6 +55,18 @@ final class AuthenticationViewModel: ObservableObject {
                 self?.user = user
             }
         
+            .store(in: &subscriptions)
+    }
+    
+    func createRecord(for user: User) {
+        DataBaseManager.shared.collectionUsers(add: user)
+            .sink { [weak self] completion in
+                if case .failure(let error) = completion {
+                    self?.error = error.localizedDescription
+                }
+            } receiveValue: { state in
+                print("Adding user record to database: \(state)")
+            }
             .store(in: &subscriptions)
     }
     
