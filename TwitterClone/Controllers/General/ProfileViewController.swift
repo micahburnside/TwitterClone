@@ -7,6 +7,8 @@
 
 import UIKit
 import Combine
+import SDWebImage
+
 class ProfileViewController: UIViewController {
     
     private var viewModel = ProfileViewViewModel()
@@ -61,6 +63,7 @@ class ProfileViewController: UIViewController {
             self?.headerView.userBioLabel.text = user.bio
             self?.headerView.followersCountLabel.text = "\(user.followersCount)"
             self?.headerView.followingCountLabel.text = "\(user.followingCount)"
+            self?.headerView.
         }
         .store(in: &subscriptions)
     }
