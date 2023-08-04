@@ -11,7 +11,7 @@ import Firebase
 struct TwitterUser: Codable {
     let id: String
     var displayName: String = ""
-    var userName: String = ""
+    var username: String = ""
     var followersCount: Int = 0
     var followingCount: Int = 0
     var createdOn: Date = Date()

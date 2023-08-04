@@ -59,7 +59,9 @@ class ProfileViewController: UIViewController {
         viewModel.$user.sink { [weak self] user in
             guard let user = user else { return }
             self?.headerView.displayNameLabel.text = user.displayName
-            self?.headerView.usernameLabel.text = "@\(user.userName)"
+            print("@\(user.username)")
+            self?.headerView.usernameLabel.text = "@\(user.username)"
+            
             self?.headerView.userBioLabel.text = user.bio
             self?.headerView.followersCountLabel.text = "\(user.followersCount)"
             self?.headerView.followingCountLabel.text = "\(user.followingCount)"
