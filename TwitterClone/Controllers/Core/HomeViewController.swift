@@ -13,9 +13,10 @@ class HomeViewController: UIViewController {
     
     private var viewModel = HomeViewViewModel()
     private var subscriptions: Set<AnyCancellable> = []
-    
-    private let composeTweetButton: UIButton = {
-        let button = UIButton(type: .system, primaryAction: UIAction { _ in
+     
+    private lazy var composeTweetButton: UIButton = {
+        let button = UIButton(type: .system, primaryAction: UIAction { [weak self] _ in
+            self?.navigateToComposeTweetViewController()
             print("Tweet is being prepared ")
         })
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -62,10 +63,13 @@ class HomeViewController: UIViewController {
         timelineTableView.dataSource = self
         configureNavigationbar()
         navigationItem.rightBarButtonItem = UIBarButtonItem(image: UIImage(systemName: "rectangle.portrait.and.arrow.right"), style: .plain, target: self, action: #selector(didTapSignOut))
+//        composeTweetButton.addTarget(self, action: #selector(didTapComposeButton), for: .touchUpInside)
         configureConstraints()
         bindViews()
         
     }
+    
+// 
     
     @objc private func didTapSignOut() {
       try?  Auth.auth().signOut()
@@ -81,13 +85,15 @@ class HomeViewController: UIViewController {
         if Auth.auth().currentUser == nil {
             let vc = UINavigationController(rootViewController: OnboardingViewController())
             vc.modalPresentationStyle = .fullScreen
-            present(vc, animated: false)
+            navigationController?.pushViewController(vc, animated: true)
         }
 
     }
 
     private func navigateToComposeTweetViewController() {
-        let vc = 
+        let vc = UINavigationController(rootViewController: ComposeTweetViewController())
+        vc.modalPresentationStyle = .fullScreen
+        present(vc, animated: true)
     }
     
     override func viewWillAppear(_ animated: Bool) {
