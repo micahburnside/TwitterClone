@@ -16,14 +16,14 @@ class ComposeTweetViewController: UIViewController {
         button.setTitle("tweet", for: .normal)
         button.layer.cornerRadius = 20
         button.clipsToBounds = true
-        button.setTitleColor(.white, for: .normal )
+        button.setTitleColor(.white, for: .normal)
+        button.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
         return button
     }()
     
     private let tweetContentTextView: UITextView = {
         let textView = UITextView()
         textView.translatesAutoresizingMaskIntoConstraints = false
-        textView.backgroundColor = .secondarySystemFill
         textView.layer.masksToBounds = true
         textView.layer.cornerRadius = 8
         textView.textContainerInset = .init(top: 15, left: 15, bottom: 15, right: 15)
@@ -32,6 +32,7 @@ class ComposeTweetViewController: UIViewController {
         textView.font = .systemFont(ofSize: 16)
         return textView
     }()
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -39,6 +40,7 @@ class ComposeTweetViewController: UIViewController {
         navigationItem.leftBarButtonItem = UIBarButtonItem(title: "Cancel", style: .plain, target: self, action: #selector(didTapToCancel))
         view.addSubview(tweetButton)
         view.addSubview(tweetContentTextView)
+        tweetContentTextView.delegate = self
         configureConstraints()
     }
     
@@ -49,7 +51,7 @@ class ComposeTweetViewController: UIViewController {
     
     private func configureConstraints() {
         let tweetButtonConstraints = [
-            tweetButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.bottomAnchor, constant: -10),
+            tweetButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.topAnchor, constant: -10),
             tweetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             tweetButton.widthAnchor.constraint(equalToConstant: 120),
             tweetButton.heightAnchor.constraint(equalToConstant: 40)
@@ -64,6 +66,24 @@ class ComposeTweetViewController: UIViewController {
         NSLayoutConstraint.activate(tweetButtonConstraints)
         NSLayoutConstraint.activate(tweetContentTextViewConstraints)
 
+    }
+    
+}
+
+extension ComposeTweetViewController: UITextViewDelegate {
+    
+    func textViewDidBeginEditing(_ textView: UITextView) {
+        if textView.textColor == .gray {
+            textView.textColor = .label
+            textView.text = ""
+        }
+    }
+    
+    func textViewDidEndEditing(_ textView: UITextView) {
+        if textView.text.isEmpty == true {
+            textView.text = "What's happening?"
+            textView.textColor = .gray
+        }
     }
     
 }
