@@ -14,6 +14,15 @@ class HomeViewController: UIViewController {
     private var viewModel = HomeViewViewModel()
     private var subscriptions: Set<AnyCancellable> = []
     
+    private let Button: UIButton = {
+        let button = UIButton(type: .system, primaryAction: UIAction { _ in
+            
+        })
+        button.translatesAutoresizingMaskIntoConstraints = false
+        button.backgroundColor = .twitterBlueColor
+        return button
+    }()
+    
     private func configureNavigationbar() {
         let size: CGFloat = 36
         
