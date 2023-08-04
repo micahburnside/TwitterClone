@@ -21,7 +21,7 @@ class ProfileDataFormViewController: UIViewController {
         scrollView.keyboardDismissMode = .onDrag
         return scrollView
     }()
-    
+
     private let displayNameTextField: UITextField = {
         let textField = UITextField()
         textField.translatesAutoresizingMaskIntoConstraints = false
@@ -113,6 +113,7 @@ class ProfileDataFormViewController: UIViewController {
         bioTextView.delegate = self
         view.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToDismiss)))
         avatarPlaceholderImageView.addGestureRecognizer(UITapGestureRecognizer(target: self, action: #selector(didTapToUpload)))
+        submitButton.addTarget(self, action: #selector(didTapSubmit), for: .touchUpInside)
         configureConstraints()
         bindViews()
     }
@@ -121,10 +122,13 @@ class ProfileDataFormViewController: UIViewController {
         displayNameTextField.addTarget(self, action: #selector(didUpdateDisplayName), for: .editingChanged)
         userNameTextField.addTarget(self, action: #selector(didUpdateUserName), for: .editingChanged)
         viewModel.$isFormValid.sink { [weak self] buttonState in
-            self?.submitButton.isEnabled = buttonState
+        self?.submitButton.isEnabled = buttonState
         }
         .store(in: &subscriptions)
-
+    }
+    
+    @objc private func didTapSubmit() {
+        viewModel.uploadAvatar()
     }
     
     @objc private func didUpdateDisplayName() {
@@ -141,12 +145,10 @@ class ProfileDataFormViewController: UIViewController {
         var configuration = PHPickerConfiguration()
         configuration.filter = .images
         configuration.selectionLimit = 1
-        
         let picker = PHPickerViewController(configuration: configuration)
         picker.delegate = self
         present(picker, animated: true)
     }
-    
     
     @objc private func didTapToDismiss() {
         view.endEditing(true)
@@ -207,7 +209,6 @@ class ProfileDataFormViewController: UIViewController {
         NSLayoutConstraint.activate(usernameTextFieldConstraints)
         NSLayoutConstraint.activate(bioTextViewConstraints)
         NSLayoutConstraint.activate(submitButtonConstraints)
-
     }
 }
 
@@ -217,7 +218,6 @@ extension ProfileDataFormViewController: UITextViewDelegate, UITextFieldDelegate
         if textView.textColor == .gray {
             textView.textColor = .label
             textView.text = ""
-            
         }
     }
     
@@ -230,7 +230,10 @@ extension ProfileDataFormViewController: UITextViewDelegate, UITextFieldDelegate
     }
     
     func textViewDidChange(_ textView: UITextView) {
+        // assign textView value to bio
         viewModel.bio = textView.text
+        // ensures form is valid
+        viewModel.validateProfileForm()
     }
     
     func textFieldDidBeginEditing(_ textField: UITextField) {
