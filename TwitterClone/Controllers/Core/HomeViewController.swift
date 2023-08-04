@@ -86,6 +86,10 @@ class HomeViewController: UIViewController {
 
     }
 
+    private func navigateToComposeTweetViewController() {
+        let vc = 
+    }
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         navigationController?.navigationBar.isHidden = false

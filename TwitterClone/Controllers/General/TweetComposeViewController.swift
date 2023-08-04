@@ -1,5 +1,5 @@
 //
-//  TweetComposeViewController.swift
+//  ComposeTweetViewController.swift
 //  TwitterClone
 //
 //  Created by Micah Burnside on 8/4/23.
@@ -7,13 +7,13 @@
 
 import UIKit
 
-class TweetComposeViewController: UIViewController {
+class ComposeTweetViewController: UIViewController {
 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        view.backgroundColor = .systemBackground
+        view.backgroundColor = .systemBackground 
     }
     
 
