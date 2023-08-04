@@ -67,6 +67,10 @@
 		54EAFA442A7C9192009B8EA8 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA432A7C9192009B8EA8 /* StorageManager.swift */; };
 		54EAFA452A7C9192009B8EA8 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA432A7C9192009B8EA8 /* StorageManager.swift */; };
 		54EAFA462A7C9192009B8EA8 /* StorageManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA432A7C9192009B8EA8 /* StorageManager.swift */; };
+		54EAFA482A7D6562009B8EA8 /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA472A7D6562009B8EA8 /* ProfileViewViewModel.swift */; };
+		54EAFA492A7D6562009B8EA8 /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA472A7D6562009B8EA8 /* ProfileViewViewModel.swift */; };
+		54EAFA4A2A7D6562009B8EA8 /* ProfileViewViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA472A7D6562009B8EA8 /* ProfileViewViewModel.swift */; };
+		54EAFA4D2A7D72CF009B8EA8 /* SDWebImage in Frameworks */ = {isa = PBXBuildFile; productRef = 54EAFA4C2A7D72CF009B8EA8 /* SDWebImage */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -120,6 +124,7 @@
 		54EAFA3B2A7AAA59009B8EA8 /* ProfileDataFormViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataFormViewController.swift; sourceTree = "<group>"; };
 		54EAFA3F2A7AABDF009B8EA8 /* ProfileDataFormViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileDataFormViewViewModel.swift; sourceTree = "<group>"; };
 		54EAFA432A7C9192009B8EA8 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
+		54EAFA472A7D6562009B8EA8 /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -131,6 +136,7 @@
 				54EAFA082A795E77009B8EA8 /* FirebaseDatabase in Frameworks */,
 				54EAFA042A795E77009B8EA8 /* FirebaseAuth in Frameworks */,
 				54EAFA102A795E77009B8EA8 /* FirebaseFirestoreSwift in Frameworks */,
+				54EAFA4D2A7D72CF009B8EA8 /* SDWebImage in Frameworks */,
 				54EAFA0E2A795E77009B8EA8 /* FirebaseFirestoreCombine-Community in Frameworks */,
 				54EAFA122A795E77009B8EA8 /* FirebaseStorage in Frameworks */,
 				54EAFA0C2A795E77009B8EA8 /* FirebaseFirestore in Frameworks */,
@@ -277,6 +283,7 @@
 				54EAFA212A7972FB009B8EA8 /* AuthenticationViewModel.swift */,
 				54EAFA372A7AA2DE009B8EA8 /* HomeViewViewModel.swift */,
 				54EAFA3F2A7AABDF009B8EA8 /* ProfileDataFormViewViewModel.swift */,
+				54EAFA472A7D6562009B8EA8 /* ProfileViewViewModel.swift */,
 			);
 			path = ViewModels;
 			sourceTree = "<group>";
@@ -325,6 +332,7 @@
 				54EAFA0F2A795E77009B8EA8 /* FirebaseFirestoreSwift */,
 				54EAFA112A795E77009B8EA8 /* FirebaseStorage */,
 				54EAFA132A795E77009B8EA8 /* FirebaseStorageCombine-Community */,
+				54EAFA4C2A7D72CF009B8EA8 /* SDWebImage */,
 			);
 			productName = TwitterClone;
 			productReference = 54EAF9B52A783068009B8EA8 /* TwitterClone.app */;
@@ -400,6 +408,7 @@
 			mainGroup = 54EAF9AC2A783068009B8EA8;
 			packageReferences = (
 				54EAFA022A795E77009B8EA8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */,
+				54EAFA4B2A7D72CF009B8EA8 /* XCRemoteSwiftPackageReference "SDWebImage" */,
 			);
 			productRefGroup = 54EAF9B62A783068009B8EA8 /* Products */;
 			projectDirPath = "";
@@ -451,6 +460,7 @@
 				54EAF9FA2A789EF0009B8EA8 /* TweetTableViewCellDelegate.swift in Sources */,
 				54EAF9F02A784CE2009B8EA8 /* SearchViewController.swift in Sources */,
 				54EAF9EE2A784CCB009B8EA8 /* HomeViewController.swift in Sources */,
+				54EAFA482A7D6562009B8EA8 /* ProfileViewViewModel.swift in Sources */,
 				54EAF9F72A788B02009B8EA8 /* TweetTableViewCell.swift in Sources */,
 				54EAF9BD2A783068009B8EA8 /* MainTabBarViewController.swift in Sources */,
 				54EAF9F42A784CF5009B8EA8 /* DirectMessagesViewController.swift in Sources */,
@@ -481,6 +491,7 @@
 				54EAFA452A7C9192009B8EA8 /* StorageManager.swift in Sources */,
 				54EAFA282A7978BD009B8EA8 /* AuthManager.swift in Sources */,
 				54EAFA392A7AA2DE009B8EA8 /* HomeViewViewModel.swift in Sources */,
+				54EAFA492A7D6562009B8EA8 /* ProfileViewViewModel.swift in Sources */,
 				54EAFA312A7A9CEB009B8EA8 /* TwitterUser.swift in Sources */,
 				54EAFA232A7972FB009B8EA8 /* AuthenticationViewModel.swift in Sources */,
 				54EAFA2C2A7A2A5D009B8EA8 /* LoginViewController.swift in Sources */,
@@ -497,6 +508,7 @@
 				54EAFA362A7A9DD9009B8EA8 /* DatabaseManager.swift in Sources */,
 				54EAFA2D2A7A2A5D009B8EA8 /* LoginViewController.swift in Sources */,
 				54EAFA1F2A796852009B8EA8 /* RegisterViewController.swift in Sources */,
+				54EAFA4A2A7D6562009B8EA8 /* ProfileViewViewModel.swift in Sources */,
 				54EAFA462A7C9192009B8EA8 /* StorageManager.swift in Sources */,
 				54EAF9DF2A783069009B8EA8 /* TwitterCloneUITestsLaunchTests.swift in Sources */,
 				54EAFA422A7AABDF009B8EA8 /* ProfileDataFormViewViewModel.swift in Sources */,
@@ -832,6 +844,14 @@
 				minimumVersion = 9.0.0;
 			};
 		};
+		54EAFA4B2A7D72CF009B8EA8 /* XCRemoteSwiftPackageReference "SDWebImage" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/SDWebImage/SDWebImage.git";
+			requirement = {
+				kind = upToNextMajorVersion;
+				minimumVersion = 5.0.0;
+			};
+		};
 /* End XCRemoteSwiftPackageReference section */
 
 /* Begin XCSwiftPackageProductDependency section */
@@ -879,6 +899,11 @@
 			isa = XCSwiftPackageProductDependency;
 			package = 54EAFA022A795E77009B8EA8 /* XCRemoteSwiftPackageReference "firebase-ios-sdk" */;
 			productName = "FirebaseStorageCombine-Community";
+		};
+		54EAFA4C2A7D72CF009B8EA8 /* SDWebImage */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = 54EAFA4B2A7D72CF009B8EA8 /* XCRemoteSwiftPackageReference "SDWebImage" */;
+			productName = SDWebImage;
 		};
 /* End XCSwiftPackageProductDependency section */
 

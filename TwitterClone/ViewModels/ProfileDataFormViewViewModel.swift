@@ -9,6 +9,7 @@ import Foundation
 import UIKit
 import Combine
 import FirebaseStorage
+import FirebaseAuth
 
 final class ProfileDataFormViewViewModel: ObservableObject {
     
@@ -21,6 +22,8 @@ final class ProfileDataFormViewViewModel: ObservableObject {
     @Published var imageData: UIImage?
     @Published var isFormValid: Bool = false
     @Published var error: String = ""
+    @Published var isOboardingFinished: Bool = false
+
 
 
     func validateProfileForm() {
@@ -67,8 +70,27 @@ final class ProfileDataFormViewViewModel: ObservableObject {
         guard let displayName,
               let username,
               let bio,
-              let avatarPath else { return }
+              let avatarPath,
+              let id = Auth.auth().currentUser?.uid else { return }
         
+        let updatedFields: [String: Any] = [
+            "displayName" : displayName,
+            "username" : username,
+            "bio" : bio,
+            "avatarPath" : avatarPath,
+            "isUserOnboarded": true
+        ]
+        DataBaseManager.shared.collectionUsers(updateFields: updatedFields, for: id)
+            .sink { [weak self] completion in
+                if case .failure(let error) = completion {
+                    print(error.localizedDescription)
+                    self?.error = error.localizedDescription
+                    
+                }
+            } receiveValue: { [weak self] onboardingState in
+                self?.isOboardingFinished = onboardingState
+            }
+            .store(in: &subscriptions)
     }
 }
 
