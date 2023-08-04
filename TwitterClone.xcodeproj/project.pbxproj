@@ -74,6 +74,9 @@
 		54EAFA512A7D8592009B8EA8 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA502A7D8592009B8EA8 /* Extension+UIColor.swift */; };
 		54EAFA522A7D8592009B8EA8 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA502A7D8592009B8EA8 /* Extension+UIColor.swift */; };
 		54EAFA532A7D8592009B8EA8 /* Extension+UIColor.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA502A7D8592009B8EA8 /* Extension+UIColor.swift */; };
+		54EAFA552A7D88A9009B8EA8 /* TweetComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA542A7D88A9009B8EA8 /* TweetComposeViewController.swift */; };
+		54EAFA562A7D88A9009B8EA8 /* TweetComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA542A7D88A9009B8EA8 /* TweetComposeViewController.swift */; };
+		54EAFA572A7D88A9009B8EA8 /* TweetComposeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 54EAFA542A7D88A9009B8EA8 /* TweetComposeViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -129,6 +132,7 @@
 		54EAFA432A7C9192009B8EA8 /* StorageManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = StorageManager.swift; sourceTree = "<group>"; };
 		54EAFA472A7D6562009B8EA8 /* ProfileViewViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProfileViewViewModel.swift; sourceTree = "<group>"; };
 		54EAFA502A7D8592009B8EA8 /* Extension+UIColor.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "Extension+UIColor.swift"; sourceTree = "<group>"; };
+		54EAFA542A7D88A9009B8EA8 /* TweetComposeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TweetComposeViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -268,6 +272,7 @@
 			children = (
 				54EAF9FC2A78A50C009B8EA8 /* ProfileViewController.swift */,
 				54EAFA3B2A7AAA59009B8EA8 /* ProfileDataFormViewController.swift */,
+				54EAFA542A7D88A9009B8EA8 /* TweetComposeViewController.swift */,
 			);
 			path = General;
 			sourceTree = "<group>";
@@ -496,6 +501,7 @@
 				54EAFA402A7AABDF009B8EA8 /* ProfileDataFormViewViewModel.swift in Sources */,
 				54EAF9FF2A792F77009B8EA8 /* ProfileTableViewHeader.swift in Sources */,
 				54EAFA342A7A9DD9009B8EA8 /* DatabaseManager.swift in Sources */,
+				54EAFA552A7D88A9009B8EA8 /* TweetComposeViewController.swift in Sources */,
 				54EAFA2B2A7A2A5D009B8EA8 /* LoginViewController.swift in Sources */,
 				54EAF9B92A783068009B8EA8 /* AppDelegate.swift in Sources */,
 				54EAF9F22A784CED009B8EA8 /* NotificationsViewController.swift in Sources */,
@@ -520,6 +526,7 @@
 				54EAFA2C2A7A2A5D009B8EA8 /* LoginViewController.swift in Sources */,
 				54EAFA3D2A7AAA59009B8EA8 /* ProfileDataFormViewController.swift in Sources */,
 				54EAFA1E2A796852009B8EA8 /* RegisterViewController.swift in Sources */,
+				54EAFA562A7D88A9009B8EA8 /* TweetComposeViewController.swift in Sources */,
 				54EAFA352A7A9DD9009B8EA8 /* DatabaseManager.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -539,6 +546,7 @@
 				54EAFA322A7A9CEB009B8EA8 /* TwitterUser.swift in Sources */,
 				54EAF9DD2A783069009B8EA8 /* TwitterCloneUITests.swift in Sources */,
 				54EAFA3E2A7AAA59009B8EA8 /* ProfileDataFormViewController.swift in Sources */,
+				54EAFA572A7D88A9009B8EA8 /* TweetComposeViewController.swift in Sources */,
 				54EAFA242A7972FB009B8EA8 /* AuthenticationViewModel.swift in Sources */,
 				54EAFA3A2A7AA2DE009B8EA8 /* HomeViewViewModel.swift in Sources */,
 				54EAFA292A7978BD009B8EA8 /* AuthManager.swift in Sources */,
