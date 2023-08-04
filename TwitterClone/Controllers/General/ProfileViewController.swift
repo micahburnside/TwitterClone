@@ -61,15 +61,15 @@ class ProfileViewController: UIViewController {
             self?.headerView.displayNameLabel.text = user.displayName
             print("@\(user.username)")
             self?.headerView.usernameLabel.text = "@\(user.username)"
-            
             self?.headerView.userBioLabel.text = user.bio
             self?.headerView.followersCountLabel.text = "\(user.followersCount)"
             self?.headerView.followingCountLabel.text = "\(user.followingCount)"
             self?.headerView.profileAvatarImageView.sd_setImage(with: URL(string: user.avatarPath))
+            self?.headerView.joinedDateLabel.text = self?.viewModel.getFormattedDate(with: user.createdOn)
         }
         .store(in: &subscriptions)
     }
-    
+
     private func configureConstraints() {
         let profileTableViewConstraints = [
             profileTableView.leadingAnchor.constraint(equalTo: view.leadingAnchor),

@@ -108,7 +108,7 @@ class ProfileTableViewHeader: UIView {
         return label
     }()
     
-    private let joinedDateLabel: UILabel = {
+    var joinedDateLabel: UILabel = {
         let label = UILabel()
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .secondaryLabel
