@@ -6,9 +6,13 @@
 //
 
 import UIKit
+import Combine
 
 class ComposeTweetViewController: UIViewController {
 
+    private var viewModel = ComposeTweetViewViewModel()
+    private var subscriptions: Set<AnyCancellable> = []
+    
     private let tweetButton: UIButton = {
         let button = UIButton(type: .system)
         button.translatesAutoresizingMaskIntoConstraints = false
@@ -16,8 +20,11 @@ class ComposeTweetViewController: UIViewController {
         button.setTitle("tweet", for: .normal)
         button.layer.cornerRadius = 20
         button.clipsToBounds = true
-        button.setTitleColor(.white, for: .normal)
+        button.isEnabled = false
         button.titleLabel?.font = .systemFont(ofSize: 16, weight: .semibold)
+        button.setTitleColor(.white, for: .normal)
+        button.setTitleColor(.white.withAlphaComponent(0.7), for: .disabled)
+
         return button
     }()
     
@@ -33,6 +40,24 @@ class ComposeTweetViewController: UIViewController {
         return textView
     }()
     
+    private func bindViews() {
+        viewModel.$isValidTweet.sink { [weak self] state in
+            self?.tweetButton.isEnabled = state
+        } .store(in: &subscriptions)
+        
+        viewModel.$shouldDismissComposer.sink { [weak self] success in
+            if success {
+                self?.dismiss(animated: true)
+            }
+        }
+        .store(in: &subscriptions)
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        viewModel.getUserData()
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         view.backgroundColor = .systemBackground
@@ -42,9 +67,14 @@ class ComposeTweetViewController: UIViewController {
         view.addSubview(tweetContentTextView)
         tweetContentTextView.delegate = self
         configureConstraints()
+        bindViews()
+        tweetButton.addTarget(self, action: #selector(didTapToTweet), for: .touchUpInside)
     }
     
-
+    @objc private func didTapToTweet() {
+        viewModel.dispatchTweet()
+    }
+    
     @objc private func didTapToCancel() {
         dismiss(animated: true)
     }
@@ -84,6 +114,11 @@ extension ComposeTweetViewController: UITextViewDelegate {
             textView.text = "What's happening?"
             textView.textColor = .gray
         }
+    }
+    
+    func textViewDidChange(_ textView: UITextView) {
+        viewModel.tweetContent = textView.text
+        viewModel.validateToTweet()
     }
     
 }

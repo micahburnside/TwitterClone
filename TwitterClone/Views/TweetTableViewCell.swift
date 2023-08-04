@@ -17,7 +17,6 @@ class TweetTableViewCell: UITableViewCell {
     
     private let avatarImageView: UIImageView = {
         let avatarImageView = UIImageView()
-        avatarImageView.image = UIImage(systemName: "person")
         avatarImageView.translatesAutoresizingMaskIntoConstraints = false
         avatarImageView.contentMode = .scaleToFill
         avatarImageView.layer.cornerRadius = 25
@@ -29,7 +28,6 @@ class TweetTableViewCell: UITableViewCell {
     
     private let displayNameLabel: UILabel = {
         let label = UILabel()
-        label.text = "Rusty Shackleford"
         label.font = .systemFont(ofSize: 16, weight: .medium)
         label.translatesAutoresizingMaskIntoConstraints = false
         return label
@@ -37,7 +35,6 @@ class TweetTableViewCell: UITableViewCell {
     
     private let usernameLabel: UILabel = {
         let label = UILabel()
-        label.text = "@RustyShackleford"
         label.lineBreakMode = .byTruncatingTail
         label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 16, weight: .regular)
@@ -47,7 +44,7 @@ class TweetTableViewCell: UITableViewCell {
     
     private let tweetTextContentLabel: UILabel = {
         let label = UILabel()
-        label.text = "This is a fake Tweet. It will take up multiple lines, I believe this is enough text. I have never seen a thin person drinking Diet Coke."
+
         label.numberOfLines = 0
         label.font = .systemFont(ofSize: 16, weight: .regular)
         label.translatesAutoresizingMaskIntoConstraints = false
@@ -133,6 +130,13 @@ class TweetTableViewCell: UITableViewCell {
         likeButton.addTarget(self, action: #selector(didTapLike), for: .touchUpInside)
         shareButton.addTarget(self, action: #selector(didTapShare), for: .touchUpInside)
 
+    }
+    
+    func configureTweet(with displayName: String, username: String, tweetTextContent: String, avatarPath: String) {
+        displayNameLabel.text = displayName
+        usernameLabel.text = "@\(username)"
+        tweetTextContentLabel.text = tweetTextContent
+        avatarImageView.sd_setImage(with: URL(string: avatarPath))
     }
     
     private func configureConstraints() {
