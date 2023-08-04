@@ -26,7 +26,7 @@ class OnboardingViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Create Account", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 24, weight: .bold)
-        button.backgroundColor = twitterBlueColor
+        button.backgroundColor = .twitterBlueColor
         button.layer.masksToBounds = true
         button.tintColor = .white
         button.layer.cornerRadius = 30
@@ -48,7 +48,7 @@ class OnboardingViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.setTitle("Login", for: .normal)
         button.titleLabel?.font = .systemFont(ofSize: 14)
-        button.tintColor = twitterBlueColor
+        button.tintColor = .twitterBlueColor
         return button
     }()
     
