@@ -14,8 +14,9 @@ class ComposeTweetViewController: UIViewController {
         button.translatesAutoresizingMaskIntoConstraints = false
         button.backgroundColor = .twitterBlueColor
         button.setTitle("tweet", for: .normal)
-        button.layer.cornerRadius = 30
+        button.layer.cornerRadius = 20
         button.clipsToBounds = true
+        button.setTitleColor(.white, for: .normal )
         return button
     }()
     
@@ -39,7 +40,7 @@ class ComposeTweetViewController: UIViewController {
             tweetButton.bottomAnchor.constraint(equalTo: view.keyboardLayoutGuide.bottomAnchor, constant: -10),
             tweetButton.trailingAnchor.constraint(equalTo: view.trailingAnchor, constant: -10),
             tweetButton.widthAnchor.constraint(equalToConstant: 120),
-            tweetButton.heightAnchor.constraint(equalToConstant: 60)
+            tweetButton.heightAnchor.constraint(equalToConstant: 40)
         ]
         
         NSLayoutConstraint.activate(tweetButtonConstraints)
