@@ -63,7 +63,7 @@ class ProfileViewController: UIViewController {
             self?.headerView.userBioLabel.text = user.bio
             self?.headerView.followersCountLabel.text = "\(user.followersCount)"
             self?.headerView.followingCountLabel.text = "\(user.followingCount)"
-            self?.headerView.
+            self?.headerView.profileAvatarImageView.sd_setImage(with: URL(string: user.avatarPath))
         }
         .store(in: &subscriptions)
     }
