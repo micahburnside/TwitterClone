@@ -113,8 +113,7 @@ class ProfileTableViewHeader: UIView {
         label.translatesAutoresizingMaskIntoConstraints = false
         label.textColor = .secondaryLabel
         label.font = .systemFont(ofSize: 14, weight: .regular)
-        label.text = "Joined May 2021"
-        return label
+         return label
     }()
     
     var joinDateImageView: UIImageView = {
